@@ -1,0 +1,21 @@
+body{
+    background-color:black;
+    color: aliceblue;
+
+}
+.demo{
+    border: 2px solid aqua;
+    animation: fadeIn 2s ease-in forwards;
+}
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
+.demo0{
+    border: 2px solid aqua;
+    animation: fadeout 2s ease-out forwards;
+}
+@keyframes fadeout {
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
