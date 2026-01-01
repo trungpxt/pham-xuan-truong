@@ -19,8 +19,8 @@ body{
 #img{
 	
 	border-radius: 15px;
-	height: 20vh;
-	width: 20vh;
+	height: 60vh;
+	width: 800vh;
 	animation: scal1 1s ease-in forwards;
 
 }
@@ -44,8 +44,8 @@ body{
 	}
 }
 #khungimg{
-	width: 20vh;
-	height: 20vh;
+	height: 60vh;
+	width: 800vh;
 	overflow: hidden;
 	border: 3px solid brown;
 	border-radius: 20px;
