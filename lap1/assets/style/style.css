@@ -20,7 +20,7 @@ body{
 	
 	border-radius: 15px;
 	height: 60vh;
-	width: 800vh;
+	width: 80vh;
 	animation: scal1 1s ease-in forwards;
 
 }
@@ -45,7 +45,7 @@ body{
 }
 #khungimg{
 	height: 60vh;
-	width: 800vh;
+	width: 80vh;
 	overflow: hidden;
 	border: 3px solid brown;
 	border-radius: 20px;
