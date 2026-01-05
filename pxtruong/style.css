@@ -1,0 +1,22 @@
+body{
+	background-color: black;
+	font-size: 25px;
+	color: #33FF33;
+}
+.box{
+	overflow: hidden;
+	display: inline-block;
+	width: 18vw;
+	height: 40vh;
+	border: 2px solid purple;
+	border-radius:20px;
+	margin: 2vw;
+}
+.box img{
+	border-bottom: 2px dotted purple ;
+	width: 18vw;
+	height: 21vh;
+}
+a{
+	text-decoration: none;
+}
