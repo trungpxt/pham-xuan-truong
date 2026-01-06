@@ -12,8 +12,9 @@ section{
 	border: 2px solid green;
 	border-radius: 25px;
 	padding: 0px;
+	margin: 20px;
 }
-#title{
+.title{
 	background-color: #444444;
 	/* border-radius: 25px; */
 	padding: 10px;
@@ -24,8 +25,9 @@ section{
 	overflow: hidden;
 	white-space: nowrap;
 	text-align: center;
+	align-items: center;
 }
-.braket p{
+#text{
 	animation:run 20s ease-in-out infinite;
 }
 @keyframes run {
@@ -37,5 +39,41 @@ section{
 	}
 	100%{
 		transform: translateX(-40%);
+	}
+}
+
+#bloc{
+	border-radius: 15px;
+	margin: 60px;
+	width: 10vw;
+	height: 10vw;
+	background-color:skyblue;
+	animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+	0%{
+		transform: rotate(0deg)
+	}
+	100%{
+		transform: rotate(360deg)
+	}
+}
+#im1{
+	animation: fadedimg 1s ease forwards;
+}
+#im2{
+	animation: fadedimg 1.5s ease forwards;
+}
+#im3{
+	animation: fadedimg 2s ease forwards;
+}
+
+@keyframes fadedimg {
+	0%{
+		opacity: 0.01;
+	}
+	100%{
+		opacity: 1;
 	}
 }
