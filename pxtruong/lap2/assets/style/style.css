@@ -104,3 +104,14 @@ section{
 
 	}
 }
+
+.circle {
+    position: absolute; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    pointer-events: none;
+}
