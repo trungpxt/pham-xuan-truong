@@ -77,3 +77,30 @@ section{
 		opacity: 1;
 	}
 }
+
+#loginbut{
+	background-color: rgb(57, 244, 6);
+	font-size: 2.5rem;
+	border-radius: 20%;
+	margin: 1vw;
+	animation: background-color 1s linear forwards;
+}
+#loginbut:hover{
+	animation: tran 1s linear infinite;
+	background-color: red;
+}
+@keyframes tran {
+	0%{
+		transform: scale(1);
+		transform: translatey(0px);
+	}
+	50%{
+		transform: scale(1.1);
+		transform: translatey(-10px);
+	}
+	100%{
+		transform: scale(1);
+		transform: translatey(0px);
+
+	}
+}
