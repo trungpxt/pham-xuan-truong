@@ -1,3 +1,3 @@
 document.getElementById('butchange').addEventListener('click',()=>{
-    document.div.classList.toggle('lightmode')
+    document.body.classList.toggle('lightmode')
 })
