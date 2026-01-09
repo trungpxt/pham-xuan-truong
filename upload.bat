@@ -3,7 +3,7 @@ echo Dang bat dau cap nhat code len GitHub...
 
 git add .
 
-set /p msg="Nhap loi nhan Commit (vi du: update code): "
+set /p msg="Nhap loi nhan Commit: "
 
 git commit -m "%msg%"
 
