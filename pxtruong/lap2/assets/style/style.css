@@ -84,9 +84,10 @@ section{
 	border-radius: 20%;
 	margin: 1vw;
 	animation: background-color 1s linear forwards;
+	animation: tran 1s linear infinite;
 }
 #loginbut:hover{
-	animation: tran 1s linear infinite;
+	
 	background-color: red;
 }
 @keyframes tran {
@@ -105,3 +106,50 @@ section{
 	}
 }
 
+#slice {
+    border: 2px solid greenyellow;
+    border-radius: 25%;
+    height: 30vw;
+    width: 40vw;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.imgslide {
+    position: absolute;
+    inset: 0; 
+}
+
+#slice img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+
+/* Animation chính - crossfade */
+@keyframes crossfade {
+    0%   { opacity: 0; }
+    8%   { opacity: 0; }
+    25%  { opacity: 1; }
+    58%  { opacity: 1; }
+    75%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+#im11 {
+    animation: crossfade 15s infinite;
+    animation-delay: 0s;
+}
+
+#im12 {
+    animation: crossfade 15s infinite;
+    animation-delay: 5s;
+}
+
+#im13 {
+    animation: crossfade 15s infinite;
+    animation-delay: 10s;
+}
