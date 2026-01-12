@@ -37,3 +37,4 @@
     ease: "back.out(1.7)" // Hiệu ứng nảy nhẹ
     }); }
     });
+    console.log("chó phú")
