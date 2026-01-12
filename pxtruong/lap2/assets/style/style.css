@@ -108,9 +108,9 @@ section{
 
 #slice {
     border: 2px solid greenyellow;
-    border-radius: 25%;
+    border-radius: 15%;
     height: 30vw;
-    width: 40vw;
+    width: 50vw;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
