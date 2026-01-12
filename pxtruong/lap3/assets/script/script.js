@@ -1,17 +1,12 @@
-document.getElementById('butchange').addEventListener('click',()=>{
-    document.body.classList.toggle('lightmode')
-})
-
 const circle = document.querySelector('.circle');
 
 document.addEventListener('mousemove', function(e) {
-    const x = e.pageX; 
-    const y = e.pageY;
+    const x = e.clientX; 
+    const y = e.clientY;
 
     circle.style.left = x + 'px';
     circle.style.top = y + 'px';
 });
-
 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
@@ -34,3 +29,5 @@ function reveal() {
   
   // Gọi hàm ngay khi load trang để kiểm tra các phần tử ở ngay đầu trang
   reveal();
+
+  console.log("js oke")
