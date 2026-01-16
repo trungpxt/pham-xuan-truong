@@ -1,207 +1,259 @@
-body{
-	background-color: black;
-	color: white;
-	font-size: 25px;
-	margin: 0px;
-}
-p{
-}
-#menu-head{
-	display:flex;
-	background-color: gray;
-	font-size: 2.5rem;
 
+/* sử dụng Ai để săp sếp đinh hình code sạch hơn ko dùng để viết :)  */
+/* ==========================================================================
+   1. Biến CSS (dễ chỉnh sửa sau này)
+   ========================================================================== */
+:root {
+    --primary: #00eeff;
+    --primary-gradient: linear-gradient(#00eeff, #00ff15);
+    --accent: #ff0000;
+    --text: white;
+    --bg-dark: black;
+    --gray: gray;
+    --highlight: skyblue;
+    --button: lightgreen;
+    --purple-title: darkviolet;
 }
-.item-menu{
-	padding: 0px;
-	margin: 0px;
-	padding-left: 1vw;
-	padding-right: 1vw;
-	background: linear-gradient(#007bff, #007bff) no-repeat left bottom / 0 2px;
-    transition: background-size 1s ease ;
+
+/* ==========================================================================
+   2. Reset & Base
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.item-menu:hover{
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. Typography & Links
+   ========================================================================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. Menu
+   ========================================================================== */
+#menu-head {
+    display: flex;
+    justify-content: center;
+    background-color: var(--gray);
+    font-size: 2.5rem;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.item-menu {
+    color: var(--primary);
+    padding: 0.5rem 1vw;
+    background: var(--primary-gradient) no-repeat left bottom / 0 2px;
+    transition: background-size 0.6s ease, color 0.3s ease;
+}
+
+.item-menu:hover {
+    color: var(--accent);
+    background-color: blue;
     background-size: 100% 3px;
 }
-.section{
- margin-bottom: 5vh;
-	min-height: 50vh;
-	border-radius: 20px;
-    opacity: 0;
-    transform: translateY(50px); /* Slide từ dưới lên */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+/* ==========================================================================
+   5. Images - Zoom hover dùng transition (ổn định nhất)
+   ========================================================================== */
+img {
+    border-radius: 5%;
+    display: block;
+    max-width: 100%;
+    transition: transform 0.4s ease;
+    transform: scale(1);
 }
+
+img:hover {
+    transform: scale(1.08);   /* nhẹ nhàng hơn 1.1, ít vỡ layout */
+}
+
+/* ==========================================================================
+   6. Sections & Animations xuất hiện
+   ========================================================================== */
+.section {
+    margin: 0 auto 8vh;
+    min-height: 50vh;
+    max-width: 1400px;
+    padding: 0 2vw;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
 .section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-#banner{
-	border-radius: 1vw;
-	margin-top: 3vh;
-	border: 2px solid #B0000C;
-	height: 25vh;
-	width: 99vw;
-	overflow: hidden;
-	animation-delay: 1s;
-	animation: appear 2s ease-in forwards;
+/* Banner */
+#banner {
+    margin: 3vh auto;
+    width: 98vw;
+    max-width: 1800px;
+    height: 25vh;
+    border: 2px solid #B0000C;
+    border-radius: 1vw;
+    overflow: hidden;
+    animation: appear 2s ease-out forwards;
 }
-#img-banner{
-	height: 30vh;
-	width: 100vw;
+
+#img-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes appear {
-	0%{
-		opacity: 0;
-		transform: translateY(-20px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateY(0px);
-
-	}
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-#bracket{
-	background-color: gray;
-	overflow: hidden;
-	white-space: nowrap;
-	text-align: center;
-	align-items: center;
-	background-color: black;
-} 
-#text-run{
-	display: inline-block;
-	color: skyblue;
-	animation: run 20s ease-in-out infinite;
+/* Text chạy */
+#bracket {
+    background: var(--bg-dark);
+    overflow: hidden;
+    white-space: nowrap;
 }
+
+#text-run {
+    display: inline-block;
+    color: var(--highlight);
+    padding: 1rem 0;
+    animation: run 25s linear infinite;
+}
+
 @keyframes run {
-	 0% {
-      transform: translateX(210%);
-    }
-    100% {
-      transform: translateX(-210%); 
-    }
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
-.reveal {
-	opacity: 0;
-	transform: translateY(50px); 
-	transition: all 1s ease-out; 
-}
-  
-.reveal.active {
-	opacity: 1;
-	transform: translateY(0);
-}
-#more-infor{
-	display: flex;
-}
-.content1{
-  	width: 40vw;
-  	overflow: hidden;
-}
-.content1 img{
-	border-radius: 20px;
-	width: 50vw;
-	animation: img_opa 1s ease-in forwards;
 
+/* ==========================================================================
+   7. Nội dung chính (flex layouts)
+   ========================================================================== */
+#more-infor,
+#sug-system,
+#bos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
-.content2{
-	width: 60%;
-	padding-left: 10px;
-	animation-delay: 2s;
-	animation: text_opa 1s ease-in forwards;
 
+.content1,
+.content2,
+#text-bos,
+.img-bos {
+    flex: 1 1 300px;
 }
-#sug-system{
-	display: flex;
-}
-.but{
-	background-color: lightgreen;
-	border-radius: 10px;
-	font-size: 4rem;
-	color: white;
-	animation: but 1s ease-in-out infinite;
-}
-@keyframes but {
-	0%{
-		transform: translateY(-10px);
-	}
-	50%{
-		transform: translateY(0px);
-	}
-	100%{
-		transform: translateY(-10px);
-	}
-}
-@keyframes text_opa {
-	0%{
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateY(0px);
-	}
-}
-@keyframes img_opa {
-	0%{
-		opacity: 0;
-		transform: translateX(20px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-.item{
 
-	display: inline-block;
-	background-color: gray;
-	border: 2px solid white;
-	border-radius: 20px;
-	overflow: hidden;
-	margin: 10px;
-	animation:sca_out 1s ease-in forwards;
+.content1 {
+    max-width: 45%;
 }
+
+.content2 {
+    max-width: 55%;
+    padding: 1rem;
+}
+
+.content1 img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* Boss section */
+#img-bos {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   8. Button tải game
+   ========================================================================== */
+.but {
+    background-color: var(--button);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 3rem;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+.but:hover {
+    transform: translateY(-6px);
+    background-color: var(--accent);
+    color: aqua;
+    box-shadow: 0 10px 25px rgba(255,0,0,0.4);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* ==========================================================================
+   9. Game items (FromSoftware)
+   ========================================================================== */
+#SWgame {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.item {
+    display: inline-block;
+    width: 20%;
+    min-width: 200px;
+    margin: 1.2rem;
+    background: var(--gray);
+    border: 2px solid var(--text);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
 .item img {
-	width: 20vw;
-	height: 30vw;
-		animation: itemapp 2s ease-in forwards;
+    width: 100%;
+    height: 70%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
 
+.item:hover {
+    transform: scale(1.08);
+    margin: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
-.item:hover{
-	animation: sca 1s ease-out forwards;
-}
-@keyframes itemapp {
-	0%{
-		opacity:0;
-		transform: translateY(-10vh);
-	}
-	100%{
-		opacity:1;
-		transform: translateY(0vh);
-	}
-}
-@keyframes sca {
-	0%{
-		margin: 10px;
-		transform: scale(1);
-	}
-	100%{
-		margin: 20px;
-		transform: scale(1.1);
-	}
-}
-@keyframes sca_out {
-	0%{
-		margin: 20px;
-		transform: scale(1.1);
-	}
-	100%{
-		margin: 10px;
-		transform: scale(1);
-	}
-	
+
+/* ==========================================================================
+   10. Tiêu đề lớn
+   ========================================================================== */
+#ttle {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(6rem, 12vw, 10rem);
+    color: var(--purple-title);
+    text-align: center;
+    margin: 2rem 0;
 }
