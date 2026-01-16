@@ -20,3 +20,14 @@ let word = () => {
     });
 };
 word();
+
+  const c = document.querySelector('.cursor');
+  let x = 0, y = 0;
+  window.onmousemove = e => { x = e.clientX; y = e.clientY; };
+  
+  function loop() {
+    c.style.left = x + 'px';
+    c.style.top  = y + 'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
