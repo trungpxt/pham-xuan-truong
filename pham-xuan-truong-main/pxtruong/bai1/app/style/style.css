@@ -1,0 +1,274 @@
+
+/* sử dụng Ai để săp sếp đinh hình code sạch hơn ko dùng để viết :)  */
+/* ==========================================================================
+   1. Biến CSS (dễ chỉnh sửa sau này)
+   ========================================================================== */
+:root {
+    --primary: #00eeff;
+    --primary-gradient: linear-gradient(#00eeff, #00ff15);
+    --accent: #ff0000;
+    --text: white;
+    --bg-dark: black;
+    --gray: gray;
+    --highlight: skyblue;
+    --button: lightgreen;
+    --purple-title: darkviolet;
+}
+
+/* ==========================================================================
+   2. Reset & Base
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. Typography & Links
+   ========================================================================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. Menu
+   ========================================================================== */
+#menu-head {
+    display: flex;
+    justify-content: center;
+    background-color: var(--gray);
+    font-size: 2.5rem;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.item-menu {
+    color: var(--primary);
+    padding: 0.5rem 1vw;
+    background: var(--primary-gradient) no-repeat left bottom / 0 2px;
+    transition: background-size 0.6s ease, color 0.3s ease;
+}
+
+.item-menu:hover {
+    color: var(--accent);
+    background-size: 100% 3px;
+}
+
+/* ==========================================================================
+   5. Images - Zoom hover dùng transition (ổn định nhất)
+   ========================================================================== */
+img {
+    border-radius: 5%;
+    display: block;
+    max-width: 100%;
+    transition: transform 0.4s ease;
+    transform: scale(1);
+}
+
+img:hover {
+    transform: scale(1.08);   /* nhẹ nhàng hơn 1.1, ít vỡ layout */
+}
+
+/* ==========================================================================
+   6. Sections & Animations xuất hiện
+   ========================================================================== */
+.section {
+    margin: 0 auto 8vh;
+    min-height: 50vh;
+    max-width: 1400px;
+    padding: 0 2vw;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Banner */
+#banner {
+    margin: 3vh auto;
+    width: 98vw;
+    max-width: 1800px;
+    height: 25vh;
+    border: 2px solid #B0000C;
+    border-radius: 1vw;
+    overflow: hidden;
+    animation: appear 2s ease-out forwards;
+}
+
+#img-banner {
+	border-radius: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); background-color: blue; }
+}
+
+/* Text chạy */
+#bracket {
+    background: var(--bg-dark);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#text-run {
+    display: inline-block;
+    color: var(--highlight);
+    padding: 1rem 0;
+    animation: run 25s linear infinite;
+}
+
+@keyframes run {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ==========================================================================
+   7. Nội dung chính (flex layouts)
+   ========================================================================== */
+#more-infor,
+#sug-system,
+#bos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.content1,
+.content2,
+#text-bos,
+.img-bos {
+    flex: 1 1 300px;
+}
+
+.content1 {
+    max-width: 45%;
+}
+
+.content2 {
+    max-width: 55%;
+    padding: 1rem;
+}
+
+.content1 img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* Boss section */
+#img-bos {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   8. Button tải game
+   ========================================================================== */
+.but {
+    background-color: var(--button);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 3rem;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+.but:hover {
+    transform: translateY(-6px);
+    background-color: var(--accent);
+    color: aqua;
+    box-shadow: 0 10px 25px rgba(255,0,0,0.4);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* ==========================================================================
+   9. Game items (FromSoftware)
+   ========================================================================== */
+#SWgame {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.item {
+    display: inline-block;
+    width: 20%;
+    min-width: 200px;
+    margin: 1.2rem;
+    background: var(--gray);
+    border: 2px solid var(--text);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.item img {
+    width: 100%;
+    height: 70%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.item:hover {
+    transform: scale(1.08);
+    margin: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ==========================================================================
+   10. Tiêu đề lớn
+   ========================================================================== */
+#ttle {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(6rem, 12vw, 10rem);
+    color: var(--purple-title);
+    text-align: center;
+    margin: 2rem 0;
+}
+/* ==========================================================================
+	11. con trỏ chuột có hình tròn follow
+	========================================================================= */
+.cursor {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      background: #ff4444;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 12px #ff4444;
+      transition: transform 0.08s;
+    }

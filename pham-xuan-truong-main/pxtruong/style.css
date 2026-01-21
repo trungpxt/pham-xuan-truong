@@ -1,0 +1,58 @@
+body{
+	background-color: rgb(255, 255, 255);
+	font-size: 25px;
+	color: #003b00;
+}
+.box{
+	color: white;
+	overflow: hidden;
+	display: inline-block;
+	width: 16vw;
+	height: 40vh;
+	border: 2px solid purple;
+	border-radius:20px;
+	margin: 2vw;
+	background-color: rgb(63, 62, 62);
+	animation: effout 0.5s ease forwards;
+	transition: color 0.5s ease;
+	transition: background-color 0.5s ease;
+}
+
+
+.box img{
+	border-bottom: 2px dotted purple ;
+	width: 18vw;
+	height: 21vh;
+}
+.box p{
+	text-align: center;
+	padding-left: 2px;
+	font-weight: 800;
+}
+.box:hover{
+	color:rgb(63, 62, 62);
+	background-color:white;
+	animation: effrun 0.5s ease forwards;
+}
+
+a{
+	text-decoration: none;
+}
+
+
+@keyframes effrun {
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(1.1);
+	}
+}
+@keyframes effout {
+    0%{ 
+		transform: scale(1.1);
+	}
+    100%{ 
+		transform: scale(1);
+	}
+}

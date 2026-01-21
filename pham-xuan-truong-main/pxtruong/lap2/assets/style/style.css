@@ -1,0 +1,147 @@
+body{
+	background-color:black;
+	color:white;
+	font-size: 25px;
+
+
+}
+
+section{
+	overflow: hidden;
+	font-size: 0,1rem;
+	border: 2px solid green;
+	border-radius: 25px;
+	padding: 0px;
+	margin: 20px;
+}
+.title{
+	background-color: #444444;
+	/* border-radius: 25px; */
+	padding: 10px;
+	text-align: center;
+}
+.braket{
+	background-color: gray;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;
+	align-items: center;
+}
+#text{
+	animation:run 20s ease-in-out infinite;
+}
+@keyframes run {
+	0%{
+		transform: translateX(-40%);
+	}
+	50%{
+		transform: translateX(40%);
+	}
+	100%{
+		transform: translateX(-40%);
+	}
+}
+
+#bloc{
+	border-radius: 15px;
+	margin: 60px;
+	width: 10vw;
+	height: 10vw;
+	background-color:skyblue;
+	animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+	0%{
+		transform: rotate(0deg)
+	}
+	100%{
+		transform: rotate(360deg)
+	}
+}
+#im1{
+	animation: fadedimg 1s ease forwards;
+}
+#im2{
+	animation: fadedimg 1.5s ease forwards;
+}
+#im3{
+	animation: fadedimg 2s ease forwards;
+}
+
+@keyframes fadedimg {
+	0%{
+		opacity: 0.01;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+#loginbut{
+	background-color: rgb(57, 244, 6);
+	font-size: 2.5rem;
+	border-radius: 20%;
+	margin: 1vw;
+	animation: background-color 1s linear forwards;
+	animation: tran 1s linear infinite;
+}
+#loginbut:hover{
+	
+	background-color: red;
+}
+@keyframes tran {
+	0%{
+		transform: scale(1);
+		transform: translatey(0px);
+	}
+	50%{
+		transform: scale(1.1);
+		transform: translatey(-10px);
+	}
+	100%{
+		transform: scale(1);
+		transform: translatey(0px);
+	}
+}
+#slice {
+    border: 2px solid greenyellow;
+    border-radius: 15%;
+    height: 30vw;
+    width: 50vw;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+.imgslide {
+    position: absolute;
+    inset: 0; 
+}
+#slice img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+@keyframes crossfade {
+    0%   { opacity: 0; }
+    8%   { opacity: 0; }
+    25%  { opacity: 1; }
+    58%  { opacity: 1; }
+    75%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+#im11 {
+    animation: crossfade 15s infinite;
+    animation-delay: 0s;
+}
+#im12 {
+    animation: crossfade 15s infinite;
+    animation-delay: 5s;
+}
+#im13 {
+    animation: crossfade 15s infinite;
+    animation-delay: 10s;
+}
