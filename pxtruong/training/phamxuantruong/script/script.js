@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,          // hiện khi 15% section vào viewport
+        threshold: 0.10,          // hiện khi 15% section vào viewport
         rootMargin: "0px 0px -80px 0px" // trừ chiều cao navbar ~6vw
     });
 

@@ -59,7 +59,17 @@ section{
 
 .reveal.visible {  /* class sẽ được JS thêm khi vào view */
     opacity: 1;
+    scale: 1;
     transform: translateY(0);
+    animation: demo 0.8s ease forwards;
+}
+@keyframes demo {
+    0%{
+        scale: 0.8;
+    }
+    100%{
+        scale: 1;
+    }
 }
 .item-head::after {
     content: '';
@@ -87,9 +97,9 @@ section{
     margin-top: 5vw;
     width: 100vw;
     display: flex;
-    height:70vh;
+    height:50vh;
     /* position: relative; */
-    background-image: url("https://images.wallpapersden.com/image/download/4k-elden-ring-nightreign_bmhmZW2UmZqaraWkpJRobWllrWdma2U.jpg"); 
+    background-image: url("https://cdn.hstatic.net/files/200000722513/file/gearvn-laptop-gaming-t11-header-pcs.png"); 
     background-position: right;
     background-size: cover;
     overflow: hidden;
@@ -108,7 +118,17 @@ section{
     font-size: 8rem;
     animation: rtol 2s ease-in forwards;
 }
-
+.tt1{
+    animation: line_run 10s ease-in infinite;
+}
+@keyframes line_run {
+    0%{
+        transform: translateY(-200);
+    }
+    100%{
+        transform: translateY(200);
+    }
+}
 @keyframes rtol {
     0%{
         transform: translateY(-200);
@@ -135,6 +155,27 @@ section{
     font-size: 2.5rem;
     color: aliceblue;
     font-weight: 900;
+    animation: item_out 1s ease forwards;
+
+}
+.produc-item:hover{
+    animation: item 1s ease forwards;
+}
+@keyframes item_out {
+    0%{
+        scale: 1.2;
+    }
+    100%{
+        scale: 1;
+    }
+}
+@keyframes item {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.2;
+    }
 }
 .produc-item img{
     width:23vw;
